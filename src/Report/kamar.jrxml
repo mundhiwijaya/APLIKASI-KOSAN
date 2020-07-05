@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c737868-6fb8-4eaf-a39e-c742e0c38044">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     kamar.`kode_kamar` AS kamar_kode_kamar,
+     kamar.`jenis_kamar` AS kamar_jenis_kamar,
+     kamar.`harga` AS kamar_harga
+FROM
+     `kamar` kamar]]>
+	</queryString>
+	<field name="kamar_kode_kamar" class="java.lang.String"/>
+	<field name="kamar_jenis_kamar" class="java.lang.String"/>
+	<field name="kamar_harga" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="122" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="76a220c2-15ac-4ad9-ba64-f8854a076c2b" x="181" y="82" width="186" height="31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA KAMAR]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="36" y="69" width="485" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="76a220c2-15ac-4ad9-ba64-f8854a076c2b" x="126" y="10" width="290" height="31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KOS PRIA BUJANGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="76a220c2-15ac-4ad9-ba64-f8854a076c2b" x="181" y="41" width="202" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JL. SLAMET RIYADI SOLO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="36" y="20" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE KAMAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9dc0f215-69f2-4b1c-b05a-3e412f35609c" x="205" y="20" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS KAMAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7dfb133e-8e79-4d57-866c-f21df5051d63" x="391" y="20" width="130" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA KAMAR]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="36" y="7" width="485" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="36" y="48" width="485" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement uuid="9cdd9fa1-d458-4061-ad96-49461ed69608" x="77" y="0" width="88" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kamar_kode_kamar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="462544a9-81d2-4e09-b224-66b8f6f5700a" x="181" y="0" width="202" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kamar_jenis_kamar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="05690570-03d9-47df-a9f1-2484e97eb69f" x="416" y="0" width="130" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kamar_harga}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="36" y="32" width="485" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="55" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

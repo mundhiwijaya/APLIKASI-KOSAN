@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b819ac6f-5d1b-48f7-a2b4-10bad0f828b0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     penyewa.`id_penyewa` AS penyewa_id_penyewa,
+     penyewa.`nama` AS penyewa_nama,
+     penyewa.`alamat` AS penyewa_alamat,
+     penyewa.`usia` AS penyewa_usia,
+     penyewa.`no_hp` AS penyewa_no_hp,
+     penyewa.`profesi` AS penyewa_profesi
+FROM
+     `penyewa` penyewa]]>
+	</queryString>
+	<field name="penyewa_id_penyewa" class="java.lang.String"/>
+	<field name="penyewa_nama" class="java.lang.String"/>
+	<field name="penyewa_alamat" class="java.lang.String"/>
+	<field name="penyewa_usia" class="java.lang.String"/>
+	<field name="penyewa_no_hp" class="java.lang.String"/>
+	<field name="penyewa_profesi" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="76a220c2-15ac-4ad9-ba64-f8854a076c2b" x="263" y="9" width="290" height="31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KOS PRIA BUJANGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="76a220c2-15ac-4ad9-ba64-f8854a076c2b" x="318" y="40" width="202" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JL. SLAMET RIYADI SOLO]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="30" y="68" width="749" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="76a220c2-15ac-4ad9-ba64-f8854a076c2b" x="304" y="79" width="235" height="31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA PENYEWA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="73" splitType="Stretch">
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="30" y="58" width="749" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="30" y="17" width="749" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="7dfb133e-8e79-4d57-866c-f21df5051d63" x="444" y="29" width="48" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[USIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="30" y="29" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID PENYEWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9dc0f215-69f2-4b1c-b05a-3e412f35609c" x="306" y="29" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="153" y="29" width="130" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA PENYEWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7dfb133e-8e79-4d57-866c-f21df5051d63" x="521" y="29" width="109" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7dfb133e-8e79-4d57-866c-f21df5051d63" x="656" y="29" width="104" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROFESI]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement uuid="872e4f36-10f3-477b-8ee5-06525393692b" x="30" y="0" width="85" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penyewa_id_penyewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c83000ce-3115-407d-af53-48b1338171be" x="153" y="0" width="130" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penyewa_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="48920a43-443d-46bd-a95d-9f0f5d62fbf9" x="306" y="0" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penyewa_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8d230af8-1138-4612-bb1f-f2e71ef5b7ec" x="444" y="0" width="45" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penyewa_usia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="718bb71e-abd9-4fe5-ab9b-7ba855329a5c" x="520" y="0" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penyewa_no_hp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3d8b72ed-037a-43b3-a8c9-8fb8cfa0a1e4" x="656" y="0" width="133" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penyewa_profesi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="41" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

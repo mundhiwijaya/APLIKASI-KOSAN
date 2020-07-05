@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48b9148d-bbda-4029-b332-600548845fd3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="idtr" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     transaksi.`id_transaksi` AS transaksi_id_transaksi,
+     transaksi.`id_penyewa` AS transaksi_id_penyewa,
+     transaksi.`nama_penyewa` AS transaksi_nama_penyewa,
+     transaksi.`no_hp` AS transaksi_no_hp,
+     transaksi.`jenis_kamar` AS transaksi_jenis_kamar,
+     transaksi.`harga_kamar` AS transaksi_harga_kamar,
+     transaksi.`nomor_kamar` AS transaksi_nomor_kamar,
+     transaksi.`jml_tahun` AS transaksi_jml_tahun,
+     transaksi.`total` AS transaksi_total,
+     transaksi.`bayar` AS transaksi_bayar,
+     transaksi.`kekurangan` AS transaksi_kekurangan
+FROM
+     `transaksi` transaksi
+WHERE
+transaksi.id_transaksi = $P{idtr}]]>
+	</queryString>
+	<field name="transaksi_id_transaksi" class="java.lang.String"/>
+	<field name="transaksi_id_penyewa" class="java.lang.String"/>
+	<field name="transaksi_nama_penyewa" class="java.lang.String"/>
+	<field name="transaksi_no_hp" class="java.lang.String"/>
+	<field name="transaksi_jenis_kamar" class="java.lang.String"/>
+	<field name="transaksi_harga_kamar" class="java.lang.String"/>
+	<field name="transaksi_nomor_kamar" class="java.lang.String"/>
+	<field name="transaksi_jml_tahun" class="java.lang.String"/>
+	<field name="transaksi_total" class="java.lang.String"/>
+	<field name="transaksi_bayar" class="java.lang.String"/>
+	<field name="transaksi_kekurangan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="208" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="76a220c2-15ac-4ad9-ba64-f8854a076c2b" x="316" y="39" width="202" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JL. SLAMET RIYADI SOLO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="76a220c2-15ac-4ad9-ba64-f8854a076c2b" x="261" y="8" width="290" height="31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KOS PRIA BUJANGAN]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="28" y="67" width="749" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="76a220c2-15ac-4ad9-ba64-f8854a076c2b" x="302" y="78" width="235" height="31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA PENYEWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="28" y="133" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID TRANSAKSI]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="f466b486-2ceb-4b16-8e35-75eb78e981fd" x="161" y="133" width="141" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_id_transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cc78e31d-3d7d-4360-a8d1-4b3d002e7290" x="161" y="167" width="143" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_id_penyewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d42405ec-b49e-4abf-9365-83e35cedf524" x="537" y="133" width="172" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_nama_penyewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="40afc2d3-6094-489c-a0b6-f51b210654c3" x="537" y="167" width="172" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_no_hp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="28" y="167" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID PENYEWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="380" y="133" width="124" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA PENYEWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="380" y="167" width="124" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO HANDPHONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="148" y="133" width="19" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="150" y="167" width="19" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="518" y="133" width="19" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="518" y="167" width="19" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="28" y="22" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS KAMAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9dc0f215-69f2-4b1c-b05a-3e412f35609c" x="294" y="22" width="86" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO KAMAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7dfb133e-8e79-4d57-866c-f21df5051d63" x="459" y="22" width="92" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="28" y="10" width="749" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="7dfb133e-8e79-4d57-866c-f21df5051d63" x="392" y="22" width="64" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAHUN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de95d5cc-48d6-4e62-b99e-ca1f8c34a10d" x="169" y="22" width="112" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA KAMAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7dfb133e-8e79-4d57-866c-f21df5051d63" x="561" y="22" width="104" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BAYAR]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2e8c570e-a86c-4f04-bda3-47b0cd313c17" x="28" y="51" width="749" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="7dfb133e-8e79-4d57-866c-f21df5051d63" x="678" y="22" width="104" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KEKURANGAN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement uuid="e885780b-2ad3-4a3d-8d14-9e320eead7a0" x="28" y="0" width="133" height="36"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_jenis_kamar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fb90299b-e845-4721-b4b5-d210a364af23" x="169" y="0" width="112" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_harga_kamar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="654bceb8-f409-47b4-b1e0-c99e1f785731" x="294" y="0" width="53" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_nomor_kamar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8d293f8a-1a68-4b30-aea0-b53a5b7e432c" x="392" y="0" width="50" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_jml_tahun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="69b2c09e-13fa-471f-a8d6-69bb07c54bd6" x="456" y="0" width="95" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d88daf3d-9856-45c7-bcd9-4b15efbe0123" x="561" y="0" width="108" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="28490444-c39b-4fd3-95ba-56a3c3c12ae8" x="678" y="0" width="104" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_kekurangan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="43" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
